@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+.dataTable td {
+  overflow: hidden; /* this is what fixes the expansion */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table {
+  table-layout: fixed
+}
+
+.fixed_height { height: 510px; width: 100%;}
+
+input[type="search"] {
+	background-color: #fff;
+    border: 1px solid #e6e6e6;
+}
+
+.dataTable td{
+	text-align: center; 
+    vertical-align: middle;
+}
+
+.dataTable th{
+	text-align: center; 
+    vertical-align: middle;
+}
+
+.receipt-img {
+	width: auto;
+	height: 20px;
+}

@@ -1,0 +1,150 @@
+@charset "ISO-8859-1";
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+}
+
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+a {
+	font-family: OpenSans-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+p {
+	font-family: OpenSans-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+body, html {
+	height: 100%;
+	font-family: OpenSans-Regular, sans-serif;
+}
+
+.card-body{
+	padding-right: 15px;
+    padding-left: 15px;
+    min-height: 900px;
+    background: none !important;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    display: flex;
+}
+
+.margin-bottom {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+.scroll-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: rgba(52, 58, 64, 0.5);
+    line-height: 46px;
+    border-radius: .25rem!important;
+}
+
+#index-page {
+    min-width: 1140px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 50px;
+}
+
+.white-card {
+    overflow: hidden;
+    flex-grow: 1;
+    background: white;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.image-preview-input {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+
+.btn-xs {
+  padding: .35rem .4rem !important;
+  font-size: .875rem !important;
+  line-height: .5 !important;
+  border-radius: .2rem !important;
+}
+
+.popover{
+    max-width: 600px; /* Max Width of the popover (depending on the container!) */
+}

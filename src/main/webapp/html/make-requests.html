@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Make Requests</title>
+
+<link href="../css/common.css" rel="stylesheet">
+<link href="../css/login.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body id="page-top">
+
+	<div id="nav"></div>
+	<script>
+		$(document).ready(function() {
+			if(sessionStorage)
+			{
+			    // Store data
+			    if(sessionStorage.getItem("logged-in") == 1)
+			    {
+			    	if(sessionStorage.getItem("user-level") == 2)
+			    	{
+			    		window.location.href = "/ReimbursementApplication/html/all-reimbursements.html";
+			    	}
+			    }
+			    else
+			    {
+			    	window.location.href = "/ReimbursementApplication/html/login.html";
+			    }
+			}
+			else
+			{
+			    alert("Sorry, your browser do not support session storage.");
+			}
+
+			$('#nav').load("../html/navbar.html", function(){
+			    $.getScript("../js/nav.js"); 
+			});
+
+		});
+	</script>
+
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" id="request-form-validate" action="/login-action" method="post">
+					<span class="login100-form-title">
+						Make A Request
+					</span>
+					
+					<div class= "amt-row" style="overflow: hidden; margin-bottom: 10px;">
+						<div style="float:left;">
+							<label for="amount">Amount: $</label>
+							<div class="wrap-input100 validate-input" style="display: inline-block; width: 90px;">
+								<input class="input100" id="amount" type="number" name="amount" step = "0.01" min="0.01" max="1000000000" placeholder="0.01"
+									style="height: 25px; padding: 0px 10px 0px 10px;">
+							</div>
+						</div>
+						
+						<div style="float:right;">
+							<label for="type">Type:</label>
+							<select id="type">
+							  <option value="Travel">Travel</option>
+							  <option value="Food">Food</option>
+							  <option value="Lodging">Lodging</option>
+							  <option value="Health">Health</option>
+							  <option value="Business Expense">Business Expense</option>
+							  <option value="Other">Other</option>
+							</select>
+						</div>
+					</div>
+
+					<label for="custom-file">Upload Receipt:</label>
+					<div class="custom-file" style="margin-bottom: 10px;">
+					    <input type="file" class="custom-file-input" id="customFile">
+					    <label class="custom-file-label" for="customFile">Choose file</label>
+					</div>
+					<img id='img-upload' style='min-width: 75px; max-width: 400px; height: 75px; border: 1px solid #e6e6e6;'/>
+
+					<div class="descr-row" style="overflow: hidden;">
+						<label for="description">Description:</label>
+						<div class="wrap-input100 validate-input">
+							<textarea class="input100" id="description" rows="5" cols="75"
+								maxlength="250" style="padding: 10px 25px 10px 25px;"
+								placeholder="(250 chars max)"></textarea>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Submit request
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top" href="#page-top" style="display: inline;"> <i class="fas fa-angle-up"></i>
+	</a>
+
+
+	<!-- Footer -->
+	<div id="footer"></div>
+	<script>
+		$(document).ready(function() {
+
+			$('#footer').load("../html/footer.html");
+
+		});
+	</script>
+  	<!-- Footer -->
+  
+  
+
+<div id="scripts">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="../js/scroll-to-top.js"></script>
+	<script src="../js/make-request.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+</div>
+
+
+</body>
+</html>
